@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>列表页面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="styles/general.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<ul id="container">
+  <li id="header">
+    <h1>商品列表页面</h1>
+    <div class="link">[<a href="#">添加商品</a>]</div>
+    <div id="desc">
+      <div id="page-selector">
+	    <select name="kkk">
+		  <option value="kkk">1</option>
+		  <option value="kkk">2</option>
+		  <option value="kkk">3</option>
+		</select>
+		</div>
+      <span>状态</span> </div>
+  </li>
+  <li id="tips">
+    <form method="get" action="admin.php">
+      <select name="cate_id">
+        <option value="">请选择</option>
+      </select>
+      <input type="text" name="keywords" id="keywords" value="关键字"/>
+      <input type="submit" value="搜索">
+    </form>
+  </li>
+  <li id="wrapper">
+    <table class="grid" cellspacing="0" cellpadding="4" id="myDataGrid">
+      <tr>
+        <th class="first-cell"> <input type="checkbox" class="checkAll">全选</th>
+        <th>字段1</th>
+		<th>字段2</th>
+		<th>字段3</th>
+        <th>操作</th>
+      </tr>
+      <tr>
+        <td class="first-cell"><input type="checkbox" name="id" value="{$art.article_id}"><span>id号</span></td>
+        <td>字段1的值</td>
+		<td>字段2的值</td>
+		<td>字段3的值</td>
+        <td class="handlelist"><a href="#">编辑</a> | <a href="#" onclick="return confirm('确认要删除该记录？');">删除</a></td>
+      </tr>
+      <tr>
+        <td colspan="8"><ul id="batch-links" style="margin-top:5px;padding-top:5px;">
+            <li class="batch-link" action="batch" param="drop" style="line-height:20px;">删除所选记录</li>
+            <li class="batch-link" action="batch" param="set_show" style="line-height:20px;">标记所选记录</li>
+          </ul></td>
+      </tr>
+    </table>
+    <div id="page-list" style="clear:both">
+	<ul>
+	  <li class="pg_first"><a href='#'>&laquo;</a></li>
+	  <li class="pg_omission">...</li>
+	  <li class="pg_prve"><a href='#'>&lsaquo;</a></li>
+	  <li><a href='#'>1</a></li>
+      <li class="curr-page">2</li>
+	  <li class="pg_next"><a href='#'>&rsaquo;</a></li>
+      <li class="pg_omission">...</li>
+      <li class="pg_last"><a href='#'>&raquo;</a></li>
+	</ul>
+	</div>
+  </li>
+  <li id="footer">
+    <div>
+     Copyright © 2007-2010 MacFou.com All rights reserved.
+    </div>
+  </li>
+</ul>
+</body>
+</html>

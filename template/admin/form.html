@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> form </title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="styles/general.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript">
+	$(document).ready(function(){
+		var tabs = $("#tab-form .tab-bar");
+		tabs.click(function(e){
+			var tab = $(this);
+			var elem = e.target;
+			if (elem.tagName == 'LI'){
+				var lis = tab.find('li');
+				var pages = $('#tab-form .tab-page');
+				var index = 0;
+				lis.each(function(i){
+					if (this == elem){
+						index = i;
+					}
+				});
+				lis.removeClass("actived");
+				$(elem).addClass("actived");
+				pages.addClass("tab-form");
+				$(pages.get(index)).removeClass("tab-form");
+			}
+		})
+	})
+  </script>
+ </head>
+ <body align="center">
+  <ul id="container">
+    <li id="header">
+      <h1>这是表单页面</h1>
+      <div class="link"><a href="#">编辑</a></div>
+      <div id="desc">描述</div>
+    </li>
+    <li>
+      <form name="theForm" method="post" enctype="multipart/form-data">
+      <div id="tab-form" > <!--class="tab-form"-->
+        <ul class="tab-bar">
+          <li class="actived">常用</li>
+		  <li>副表单</li>
+        </ul>
+        <div class="tab-page">
+          <table class="form-table">
+            <tr>
+              <td class="label">名称1</td><td><input type="text" name="cate_name" size="40" /><span class="note">备注信息</span></td>
+            </tr>
+            <tr>
+              <td class="label">名称1</td><td><input type="text" name="cate_name" size="40" /><span class="note">备注信息</span></td>
+            </tr>
+          </table>
+        </div>
+		<div class="tab-page tab-form">
+          <table class="form-table">
+            <tr>
+              <td class="label">名称1</td><td><input type="text" name="cate_name" size="40" /><span class="note">备注信息</span></td>
+            </tr>
+            <tr>
+              <td class="label">名称2</td><td><input type="text" name="cate_name" size="40" /><span class="note">备注信息</span></td>
+            </tr>
+			<tr>
+              <td class="label">名称2</td><td><input type="text" name="cate_name" size="40" /><span class="note">备注信息</span></td>
+            </tr>
+          </table>
+        </div>
+        <p class="submitlist"><input type="submit" name="value_submit" value="提交" /> &nbsp; <input type="reset" name="value_submit" value="重置" /></p>
+      </div>
+      </form>
+    </li>
+    <li id="footer">
+      <div>
+      Copyright © 2007-2010 MacFou.com All rights reserved.
+      </div>
+    </li>
+  </ul>
+ </body>
+</html>
